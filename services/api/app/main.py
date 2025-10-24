@@ -89,3 +89,17 @@ async def stripe_webhook(request: Request):
         pass
 
     return {"ok": True}
+@app.get("/wallet/me")
+def wallet_me(request: Request):
+    user_id = request.headers.get("x-user-id")
+    if not user_id:
+        raise HTTPException(400, "x-user-id required")
+    w = db.wallets.find_one({"user_id": oid(user_id)})
+    if not w:
+        raise HTTPException(404, "wallet not found")
+    return {
+        "user_id": user_id,
+        "coin_balance": w.get("coin_balance", 0),
+        "pending_lock": w.get("pending_lock", 0),
+        "updated_at": w.get("updated_at")
+    }
