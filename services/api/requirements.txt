@@ -1,0 +1,7 @@
+
+fastapi==0.115.5
+uvicorn[standard]==0.32.0
+pydantic==2.9.2
+pymongo==4.10.1
+python-dotenv==1.0.1
+stripe==10.12.0

@@ -1,0 +1,30 @@
+
+{
+  "expo": {
+    "name": "Fightswipe",
+    "slug": "fightswipe",
+    "scheme": "fightswipe",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#000000"
+    },
+    "ios": {
+      "bundleIdentifier": "app.fightswipe.mobile",
+      "supportsTablet": false
+    },
+    "android": {
+      "package": "app.fightswipe.mobile",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#000000"
+      }
+    },
+    "extra": {
+      "apiBase": process.env.API_BASE || "http://localhost:8000"
+    }
+  }
+}
